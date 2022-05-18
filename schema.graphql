@@ -1,0 +1,22 @@
+type Token @entity {
+	id: ID!
+	owner: Bytes!
+	tokenId: BigInt!
+	uri: String!
+	txHash: Bytes!
+	timestamp: BigInt!
+}
+
+type WhiteList @entity {
+	id: ID!
+	address: Bytes!
+	isWhite: Boolean!
+}
+
+type Param @entity {
+	id: ID!
+	openTime: BigInt!
+	baseURI: String!
+	supply: BigInt!
+	remains: BigInt!
+}

@@ -1,0 +1,35 @@
+specVersion: 0.0.4
+description: EcommerceNFT for {{network}}
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: MetaN1
+    network: "{{ network }}"
+    source:
+      address: "{{Address}}"
+      abi: MetaN1
+      startBlock: {{ startBlock }}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - MetaN1
+      abis:
+        - name: MetaN1
+          file: ./abis/MetaN1.json
+      eventHandlers:
+        - event: WhiteListUpdated(address,bool)
+          handler: handleWhiteListUpdated
+        - event: BaseURIUpdated(string)
+          handler: handleBaseURIUpdated
+        - event: OpenTimeUpdated(uint256)
+          handler: handleOpenTimeUpdated
+        - event: RemainsUpdated(uint256)
+          handler: handleRemainsUpdated
+        - event: SupplyUpdated(uint256)
+          handler: handleSupplyUpdated
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: ./src/MetaN1.ts
