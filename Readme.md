@@ -1,1 +1,1 @@
-### Mint Box Subgraph
+### Meta N1 Subgraph
