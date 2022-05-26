@@ -7,7 +7,7 @@ dataSources:
     name: MetaN1
     network: "{{ network }}"
     source:
-      address: "{{Address}}"
+      address: "{{ address }}"
       abi: MetaN1
       startBlock: {{ startBlock }}
     mapping:
