@@ -7,6 +7,9 @@
 		"deploy:rinkeby": "yarn prepare:rinkeby && yarn rinkeby",
 		"rinkeby": "graph deploy --node https://api.thegraph.com/deploy/ alexandas/metansubgraph",
 		"prepare:rinkeby": "mustache config/rinkeby.json subgraph.template.yaml > subgraph.yaml",
+		"deploy:mainnet": "yarn prepare:mainnet && yarn mainnet",
+		"mainnet": "graph deploy --node https://api.thegraph.com/deploy/ alexandas/metan1",
+		"prepare:mainnet": "mustache config/mainnet.json subgraph.template.yaml > subgraph.yaml",
 		"create-local": "graph create --node http://localhost:8020/ metansubgraph",
 		"remove-local": "graph remove --node http://localhost:8020/ metansubgraph",
 		"deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 metansubgraph"

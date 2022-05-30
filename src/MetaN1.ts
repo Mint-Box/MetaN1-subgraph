@@ -70,7 +70,7 @@ export function handleTransfer(event: Transfer): void {
 	if (from.equals(Address.zero())) {
 		const token = new Token(id.toHex())
 		const owner = contract.ownerOf(id)
-		const uri = contract.tokenURI(id)
+		const uri = `${contract.baseURI()}${id.toU32()}.json`
 		token.tokenId = id
 		token.owner = owner
 		token.uri = uri
